@@ -1,4 +1,18 @@
 
+#' Read in App_id and App_code
+#'
+#' Loads a file that contains the App_id and App_code
+#' @param file_name The location of the file
+#' @keywords App_id App_code
+#' @export
+#' @examples
+#' \dontrun{
+#' ids = get_IDs(file_name="~/nokia_HERE.txt")
+#' geocodeHERE_simple("chicago")
+#' geocodeHERE_simple("wrigley field chicago IL")
+#' geocodeHERE_simple("233 S Wacker Dr, Chicago, IL 60606")
+#' }
+#' get_IDs
 get_IDs <- function(file_name="R/nokia_HERE.txt"){
   ids <- scan(file_name, what="character", quiet=T)
   return(list(App_id=ids[2], App_code=ids[4]))
