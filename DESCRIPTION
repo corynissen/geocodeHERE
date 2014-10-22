@@ -1,0 +1,12 @@
+Package: geocodeHERE
+Title: Wrapper for the HERE geocoding API
+Version: 0.1
+Authors@R: "Cory Nissen <corynissen@gmail.com> [aut, cre]"
+Description: Wrapper for the HERE geocoding API
+Depends:
+    R (>= 3.1.1)
+License: MIT
+LazyData: true
+Imports:
+    RJSONIO,
+    RCurl
