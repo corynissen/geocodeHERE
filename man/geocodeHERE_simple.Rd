@@ -3,21 +3,20 @@
 \alias{geocodeHERE_simple}
 \title{Attempt to geocode a string}
 \usage{
-geocodeHERE_simple(search, format = "json", ids = ids)
+geocodeHERE_simple(search, App_id = "", App_code = "")
 }
 \arguments{
 \item{search}{A string to search}
 
-\item{format}{json or xml. Defaults to json.}
+\item{App_id}{App_id to use the production HERE API. Get one here... http://developer.here.com/get-started. If left blank, will default to demo key with an unknown usage limit.}
 
-\item{ids}{The output from the get_IDs function. This contains the App_id and App_code required for authentication by the HERE API}
+\item{App_code}{App_code to use the production HERE API. Get one here... http://developer.here.com/get-started. If left blank, will default to demo key with an unknown usage limit.}
 }
 \description{
 Enter a string and have latitude and longitude returned using the HERE API
 }
 \examples{
 \dontrun{
-ids = get_IDs(file_name="~/nokia_HERE.txt")
 geocodeHERE_simple("chicago")
 geocodeHERE_simple("wrigley field chicago IL")
 geocodeHERE_simple("233 S Wacker Dr, Chicago, IL 60606")
