@@ -29,8 +29,8 @@ geocodeHERE_simple <- function(search, App_id="", App_code=""){
 
   search <- RCurl::curlEscape(search)
 
-  final_url <- paste0(base_url, format, "?app_id=", ids$App_id, "&app_code=",
-                      ids$App_code, "&searchtext=", search)
+  final_url <- paste0(base_url, format, "?app_id=", App_id, "&app_code=",
+                      App_code, "&searchtext=", search)
 
   response <- RCurl::getURL(final_url)
   response_parsed <- RJSONIO::fromJSON(response)
