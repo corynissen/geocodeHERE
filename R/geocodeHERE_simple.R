@@ -22,14 +22,14 @@ geocodeHERE_simple <- function(search, App_id="", App_code=""){
   if(App_id=="" & App_code==""){
     App_id <- "DemoAppId01082013GAL"
     App_code <- "AJKnXv84fjrb0KIHawS0Tg"
-    base_url <- "http://geocoder.cit.api.here.com/6.2/geocode."
+    base_url <- "http://geocoder.cit.api.here.com/6.2/geocode.json"
   }else{
-    base_url <- "http://geocoder.api.here.com/6.2/geocode."
+    base_url <- "http://geocoder.api.here.com/6.2/geocode.json"
   }
 
   search <- RCurl::curlEscape(search)
 
-  final_url <- paste0(base_url, format, "?app_id=", App_id, "&app_code=",
+  final_url <- paste0(base_url, "?app_id=", App_id, "&app_code=",
                       App_code, "&searchtext=", search)
 
   response <- RCurl::getURL(final_url)
