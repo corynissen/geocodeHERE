@@ -27,15 +27,13 @@ geocodeHERE_simple <- function(search, App_id="", App_code=""){
     base_url <- "http://geocoder.api.here.com/6.2/geocode.json"
   }
 
-  search <- RCurl::curlEscape(search)
+  a <- httr::GET(base_url, query=list(app_id = App_id,
+                                      app_code = App_code,
+                                      searchtext = search))
+  response <- httr::content(a)
 
-  final_url <- paste0(base_url, "?app_id=", App_id, "&app_code=",
-                      App_code, "&searchtext=", search)
-
-  response <- RCurl::getURL(final_url)
-  response_parsed <- RJSONIO::fromJSON(response)
-  if(length(response_parsed$Response$View) > 0){
-    ret <- response_parsed$Response$View[[1]]$Result[[1]]$Location$DisplayPosition
+  if(length(response$Response$View) > 0){
+    ret <- response$Response$View[[1]]$Result[[1]]$Location$DisplayPosition
   }else{
     ret <- NA
   }
