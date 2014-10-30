@@ -20,10 +20,15 @@ Download the result of a batch geocoding job
 }
 \examples{
 \dontrun{
-request_id <- geocodeHERE_batch_upload(file_name = "example.txt", email_address = "youremail<at>domain.com")
+addresses <- chicago_landmarks[,"Address"]
+addresses <- paste(addresses, "chicago IL")
+addresses_df <- data.frame(id=1:length(addresses), addresses=addresses)
+address_str <- df_to_string(addresses_df)
+request_id <- geocodeHERE_batch_upload(address_string = address_str, email_address = "youremail<at>domain.com")
 geocodeHERE_batch_status(request_id)
-geocodeHERE_batch_download(request_id)
-}
+result_data_path <- geocodeHERE_batch_download(request_id)
+geocode_data <- geocodeHERE_batch_final_data(result_data_path)
+addresses_df <- merge(addresses_df, geocode_data, by.x="id", by.y="recId", all.x=T)#' }
 geocodeHERE_batch_download
 }
 \keyword{batch}
