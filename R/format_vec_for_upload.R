@@ -10,7 +10,7 @@
 #' data(chicago_landmarks)
 #' addresses <- chicago_landmarks[,"Address"]
 #' addresses <- paste(addresses, "chicago IL")
-#' big_string <- format_vec_for_upload(addresses)
+#' address_str <- format_vec_for_upload(addresses)
 #' }
 #' format_vec_for_upload
 format_vec_for_upload <- function(addresses){
