@@ -10,14 +10,15 @@
 #' @export
 #' @examples
 #' \dontrun{
-#' #' data(chicago_landmarks)
 #' addresses <- chicago_landmarks[,"Address"]
 #' addresses <- paste(addresses, "chicago IL")
-#' address_str <- vec_to_string(addresses)
-#' geocodeHERE_batch_upload(address_string = address_str, email_address = "youremail<at>domain.com")
+#' addresses_df <- data.frame(id=1:length(addresses), addresses=addresses)
+#' address_str <- df_to_string(addresses_df)
+#' request_id <- geocodeHERE_batch_upload(address_string = address_str, email_address = "youremail<at>domain.com")
 #' geocodeHERE_batch_status(request_id)
-#' geocodeHERE_batch_download(request_id)
-#' }
+#' result_data_path <- geocodeHERE_batch_download(request_id)
+#' geocode_data <- geocodeHERE_batch_final_data(result_data_path)
+#' addresses_df <- merge(addresses_df, geocode_data, by.x="id", by.y="recId", all.x=T)#' }
 #' geocodeHERE_batch_download
 geocodeHERE_batch_download <- function(request_id="", download_path=getwd(),
                                        App_id="", App_code=""){
@@ -48,7 +49,7 @@ geocodeHERE_batch_download <- function(request_id="", download_path=getwd(),
   if(is.list(response)){
     stop(paste("ERROR: ", response$Details))
   }else{
-    ret <- paste0("Zip archive downloaded here: ", file_path)
+    ret <- file_path
   }
 
   return(ret)
