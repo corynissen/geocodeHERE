@@ -10,7 +10,11 @@
 #' @export
 #' @examples
 #' \dontrun{
-#' request_id <- geocodeHERE_batch_upload(file_name = "example.txt", email_address = "youremail<at>domain.com")
+#' #' data(chicago_landmarks)
+#' addresses <- chicago_landmarks[,"Address"]
+#' addresses <- paste(addresses, "chicago IL")
+#' address_str <- vec_to_string(addresses)
+#' geocodeHERE_batch_upload(address_string = address_str, email_address = "youremail<at>domain.com")
 #' geocodeHERE_batch_status(request_id)
 #' geocodeHERE_batch_download(request_id)
 #' }

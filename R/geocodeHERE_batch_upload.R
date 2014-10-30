@@ -14,7 +14,7 @@
 #' #' data(chicago_landmarks)
 #' addresses <- chicago_landmarks[,"Address"]
 #' addresses <- paste(addresses, "chicago IL")
-#' address_str <- format_vec_for_upload(addresses)
+#' address_str <- vec_to_string(addresses)
 #' geocodeHERE_batch_upload(address_string = address_str, email_address = "youremail<at>domain.com")
 #' }
 #' geocodeHERE_batch_upload
