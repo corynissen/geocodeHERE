@@ -3,11 +3,11 @@
 \alias{geocodeHERE_batch_upload}
 \title{Upload a file to Nokia HERE batch geocoding API}
 \usage{
-geocodeHERE_batch_upload(file_name, email_address, App_id = "",
+geocodeHERE_batch_upload(address_string, email_address, App_id = "",
   App_code = "", quiet = TRUE)
 }
 \arguments{
-\item{file_name}{Character string containing the path to the file to be uploaded}
+\item{address_string}{Character string containing the addresses to be geocoded. Output from 'format_vec_for_upload(...)}
 
 \item{email_address}{Character string containing an email address. Nokia will email you here when the job is done.}
 
@@ -22,7 +22,11 @@ Upload a file to Nokia HERE batch geocoding API
 }
 \examples{
 \dontrun{
-geocodeHERE_batch_upload(file_name = "example.txt", email_address = "youremail<at>domain.com")
+#' data(chicago_landmarks)
+addresses <- chicago_landmarks[,"Address"]
+addresses <- paste(addresses, "chicago IL")
+address_str <- format_vec_for_upload(addresses)
+geocodeHERE_batch_upload(address_string = address_str, email_address = "youremail<at>domain.com")
 }
 geocodeHERE_batch_upload
 }

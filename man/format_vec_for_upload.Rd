@@ -13,10 +13,10 @@ Format a vector of addresses for upload
 }
 \examples{
 \dontrun{
-load("chicago_landmarks.Rdata")
+data(chicago_landmarks)
 addresses <- chicago_landmarks[,"Address"]
 addresses <- paste(addresses, "chicago IL")
-big_string <- format_vec_for_upload(addresses)
+address_str <- format_vec_for_upload(addresses)
 }
 format_vec_for_upload
 }
