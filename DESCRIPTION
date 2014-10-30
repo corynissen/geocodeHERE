@@ -8,7 +8,5 @@ Depends:
 License: MIT
 LazyData: true
 Imports:
-    RJSONIO,
-    RCurl,
     httr
 URL: https://github.com/corynissen/geocodeHERE
