@@ -16,9 +16,9 @@
 #' address_str <- df_to_string(addresses_df)
 #' request_id <- geocodeHERE_batch_upload(address_string = address_str, email_address = "youremail<at>domain.com")
 #' geocodeHERE_batch_status(request_id)
-#' result_data_path <- geocodeHERE_batch_download(request_id)
-#' geocode_data <- geocodeHERE_batch_final_data(result_data_path)
-#' addresses_df <- merge(addresses_df, geocode_data, by.x="id", by.y="recId", all.x=T)#' }
+#' geocode_data <- geocodeHERE_batch_get_data(request_id)
+#' addresses_df <- merge(addresses_df, geocode_data, by.x="id", by.y="recId", all.x=T)
+#' }
 #' geocodeHERE_batch_status
 geocodeHERE_batch_status <- function(request_id="", full_list=FALSE, App_id="", App_code=""){
   if(!is.character(request_id)){stop("'request_id' must be a character string")}
