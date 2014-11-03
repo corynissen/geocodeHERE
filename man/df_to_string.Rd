@@ -6,7 +6,7 @@
 df_to_string(addresses_df)
 }
 \arguments{
-\item{addresses}{A df with two columns, a unique id and address character strings to be geocoded. Only results with valid lat, lng are returned, so the unique id is used to match back to the data later on.}
+\item{addresses_df}{A df with two columns, a unique id and address character strings to be geocoded. Only results with valid lat, lng are returned, so the unique id is used to match back to the data later on.}
 }
 \value{
 a long string consisting of all of the addresses to be geocoded formatted for the POST request in geocodeHERE_batch_upload()
