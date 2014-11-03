@@ -2,7 +2,8 @@
 #' Format a df of addresses for upload
 #'
 #' Format a df of addresses for upload
-#' @param addresses A df with two columns, an id and address character strings to be geocoded
+#' @param addresses A df with two columns, a unique id and address character strings to be geocoded. Only results with valid lat, lng are returned, so the unique id is used to match back to the data later on.
+#' @return a long string consisting of all of the addresses to be geocoded formatted for the POST request in geocodeHERE_batch_upload()
 #' @keywords geocode batch
 #' @export
 #' @examples
@@ -12,7 +13,6 @@
 #' addresses <- paste(addresses, "chicago IL")
 #' address_str <- vec_to_string(addresses)
 #' }
-#' df_to_string
 df_to_string <- function(addresses_df){
   if(nrow(addresses_df) > 9999){stop("'addresses_df' must be less than 10,000 rows")}
 

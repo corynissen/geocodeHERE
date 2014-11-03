@@ -1,10 +1,11 @@
 
-#' Download the result of a batch geocoding job and return the data
+#' Gets the results of a batch geocoding job
 #'
-#' Download the result of a batch geocoding job and return the data
+#' Download the result to a temp file, extract zip, read pipe delimited file, return as dataframe
 #' @param request_id Character string containing a request_id. This is returned from geocodeHERE_batch_upload(...)
 #' @param App_id App_id to use the production HERE API. Get one here... http://developer.here.com/get-started. If left blank, will default to demo key with an unknown usage limit.
 #' @param App_code App_code to use the production HERE API. Get one here... http://developer.here.com/get-started. If left blank, will default to demo key with an unknown usage limit.
+#' @return Dataframe of results from the geocoding job
 #' @keywords geocode batch
 #' @export
 #' @examples
@@ -18,7 +19,6 @@
 #' geocode_data <- geocodeHERE_batch_get_data(request_id)
 #' addresses_df <- merge(addresses_df, geocode_data, by.x="id", by.y="recId", all.x=T)
 #' #' }
-#' geocodeHERE_batch_get_data
 geocodeHERE_batch_get_data <- function(request_id="", App_id="", App_code=""){
   if(!is.character(request_id)){stop("'request_id' must be a character string")}
   if(request_id==""){stop("'request_id' must be have a value")}

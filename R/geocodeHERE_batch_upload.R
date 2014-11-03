@@ -1,18 +1,18 @@
 
-#' Upload a file to Nokia HERE batch geocoding API
+#' Bulk upload addresses to Nokia HERE batch geocoding API
 #'
-#' Upload a file to Nokia HERE batch geocoding API
+#' Use the Nokia HERE batch geocoding API to geocode lots of addresses in a single call instead of looping over the addresses one by one.
 #' @param address_string Character string containing the addresses to be geocoded. Output from 'format_vec_for_upload(...)
 #' @param email_address Character string containing an email address. Nokia will email you here when the job is done.
 #' @param App_id App_id to use the production HERE API. Get one here... http://developer.here.com/get-started. If left blank, will default to demo key with an unknown usage limit.
 #' @param App_code App_code to use the production HERE API. Get one here... http://developer.here.com/get-started. If left blank, will default to demo key with an unknown usage limit.
 #' @param quiet TRUE / FALSE indicating whether to write the POST information to the console
+#' @return request_id as a string
 #' @keywords geocode batch
 #' @export
 #' @examples
 #' \dontrun{
 #' addresses <- chicago_landmarks[,"Address"]
-#' address#' addresses <- chicago_landmarks[,"Address"]
 #' addresses <- paste(addresses, "chicago IL")
 #' addresses_df <- data.frame(id=1:length(addresses), addresses=addresses)
 #' address_str <- df_to_string(addresses_df)
@@ -21,7 +21,6 @@
 #' geocode_data <- geocodeHERE_batch_get_data(request_id)
 #' addresses_df <- merge(addresses_df, geocode_data, by.x="id", by.y="recId", all.x=T)
 #' }
-#' geocodeHERE_batch_upload
 geocodeHERE_batch_upload <- function(address_string, email_address, App_id="",
                                      App_code="", quiet=TRUE){
   if(!is.character(address_string)){stop("'address_string' must be a character string")}

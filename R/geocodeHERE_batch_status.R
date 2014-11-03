@@ -6,6 +6,7 @@
 #' @param full_list TRUE / FALSE indicating whether to return the full response from Nokia HERE or just the "Status" portion of the response
 #' @param App_id App_id to use the production HERE API. Get one here... http://developer.here.com/get-started. If left blank, will default to demo key with an unknown usage limit.
 #' @param App_code App_code to use the production HERE API. Get one here... http://developer.here.com/get-started. If left blank, will default to demo key with an unknown usage limit.
+#' @return A string representing the status of the job. The full reply from Nokia as a list if the full_list parameter is TRUE
 #' @keywords geocode batch
 #' @export
 #' @examples
@@ -19,7 +20,6 @@
 #' geocode_data <- geocodeHERE_batch_get_data(request_id)
 #' addresses_df <- merge(addresses_df, geocode_data, by.x="id", by.y="recId", all.x=T)
 #' }
-#' geocodeHERE_batch_status
 geocodeHERE_batch_status <- function(request_id="", full_list=FALSE, App_id="", App_code=""){
   if(!is.character(request_id)){stop("'request_id' must be a character string")}
   if(request_id==""){stop("'request_id' must be have a value")}
@@ -42,11 +42,11 @@ geocodeHERE_batch_status <- function(request_id="", full_list=FALSE, App_id="", 
   response <- httr::content(a)
 
   if(length(response$Response) > 0){
-    request_id <- response$Response$Status
+    status <- response$Response$Status
     if(full_list){
       ret <- response
     }else{
-      ret <- request_id
+      ret <- status
     }
   }else{
     stop(paste("ERROR: ", response))
