@@ -7,5 +7,6 @@ http://developer.here.com/
 Try it: 
 ```  
 devtools::install_github("corynissen/geocodeHERE")  
+library(geocodeHERE)
 geocodeHERE_simple("wrigley field chicago il")
 ```
