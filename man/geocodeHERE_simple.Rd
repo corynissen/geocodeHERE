@@ -12,8 +12,11 @@ geocodeHERE_simple(search, App_id = "", App_code = "")
 
 \item{App_code}{App_code to use the production HERE API. Get one here... http://developer.here.com/get-started. If left blank, will default to demo key with an unknown usage limit.}
 }
+\value{
+A list containing Latitude and Longitude if found, NA otherwise
+}
 \description{
-Enter a string and have latitude and longitude returned using the HERE API
+Enter a string and if found, the latitude and longitude is returned using the HERE API
 }
 \examples{
 \dontrun{
@@ -21,7 +24,6 @@ geocodeHERE_simple("chicago")
 geocodeHERE_simple("wrigley field chicago IL")
 geocodeHERE_simple("233 S Wacker Dr, Chicago, IL 60606")
 }
-geocodeHERE_simple
 }
 \keyword{geocode}
 

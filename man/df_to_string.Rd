@@ -6,7 +6,10 @@
 df_to_string(addresses_df)
 }
 \arguments{
-\item{addresses}{A df with two columns, an id and address character strings to be geocoded}
+\item{addresses}{A df with two columns, a unique id and address character strings to be geocoded. Only results with valid lat, lng are returned, so the unique id is used to match back to the data later on.}
+}
+\value{
+a long string consisting of all of the addresses to be geocoded formatted for the POST request in geocodeHERE_batch_upload()
 }
 \description{
 Format a df of addresses for upload
@@ -18,7 +21,6 @@ addresses <- chicago_landmarks[,"Address"]
 addresses <- paste(addresses, "chicago IL")
 address_str <- vec_to_string(addresses)
 }
-df_to_string
 }
 \keyword{batch}
 \keyword{geocode}

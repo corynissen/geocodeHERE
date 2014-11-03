@@ -15,6 +15,9 @@ geocodeHERE_batch_status(request_id = "", full_list = FALSE, App_id = "",
 
 \item{App_code}{App_code to use the production HERE API. Get one here... http://developer.here.com/get-started. If left blank, will default to demo key with an unknown usage limit.}
 }
+\value{
+A string representing the status of the job. The full reply from Nokia as a list if the full_list parameter is TRUE
+}
 \description{
 Check the status on a batch geocoding job
 }
@@ -29,7 +32,6 @@ geocodeHERE_batch_status(request_id)
 geocode_data <- geocodeHERE_batch_get_data(request_id)
 addresses_df <- merge(addresses_df, geocode_data, by.x="id", by.y="recId", all.x=T)
 }
-geocodeHERE_batch_status
 }
 \keyword{batch}
 \keyword{geocode}
