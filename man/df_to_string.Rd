@@ -16,10 +16,10 @@ Format a df of addresses for upload
 }
 \examples{
 \dontrun{
-data(chicago_landmarks)
 addresses <- chicago_landmarks[,"Address"]
 addresses <- paste(addresses, "chicago IL")
-address_str <- vec_to_string(addresses)
+addresses_df <- data.frame(id=1:length(addresses), addresses=addresses)
+address_str <- df_to_string(addresses_df)
 }
 }
 \keyword{batch}
