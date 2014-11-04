@@ -1,9 +1,11 @@
 Package: geocodeHERE
-Title: Wrapper for the HERE geocoding API
+Title: Wrapper for Nokia's HERE geocoding API.
 Version: 0.1
 Author: "Cory Nissen <corynissen@gmail.com> [aut, cre]"
 Maintainer: Cory Nissen <corynissen@gmail.com>
-Description: Wrapper for the HERE geocoding API
+Description: Wrapper for Nokia's HERE geocoding API. See http://here.com/ for
+    more information on HERE and https://developer.here.com/geocoder for more
+    information on the HERE geocoding API.
 Depends:
     R (>= 3.1.1)
 License: MIT + file LICENSE
