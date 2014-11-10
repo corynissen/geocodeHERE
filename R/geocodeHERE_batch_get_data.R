@@ -47,7 +47,7 @@ geocodeHERE_batch_get_data <- function(request_id="", App_id="", App_code=""){
     stop(paste("ERROR: ", response$Details))
   }
 
-  con <- unzip(file_path, exdir = "data.txt")
+  con <- unzip(file_path, exdir=paste0(file_path, "tmp"))
   df <- read.delim(con, stringsAsFactors=F, sep="|")
   unlink(file_path)
 
