@@ -9,17 +9,17 @@
 #' @keywords geocode batch
 #' @export
 #' @examples
-#' \dontrun{
 #' addresses <- chicago_landmarks[,"Address"]
 #' addresses <- paste(addresses, "chicago IL")
 #' addresses_df <- data.frame(id=1:length(addresses), addresses=addresses)
 #' address_str <- df_to_string(addresses_df)
+#' \donttest{
 #' request_id <- geocodeHERE_batch_upload(address_string = address_str,
 #'                                        email_address = "youremail<at>domain.com")
 #' geocodeHERE_batch_status(request_id)
 #' geocode_data <- geocodeHERE_batch_get_data(request_id)
 #' addresses_df <- merge(addresses_df, geocode_data, by.x="id", by.y="recId", all.x=T)
-#' #' }
+#' }
 geocodeHERE_batch_get_data <- function(request_id="", App_id="", App_code=""){
   if(!is.character(request_id)){stop("'request_id' must be a character string")}
   if(request_id==""){stop("'request_id' must be have a value")}

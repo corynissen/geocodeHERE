@@ -10,11 +10,11 @@
 #' @keywords geocode batch
 #' @export
 #' @examples
-#' \dontrun{
 #' addresses <- chicago_landmarks[,"Address"]
 #' addresses <- paste(addresses, "chicago IL")
 #' addresses_df <- data.frame(id=1:length(addresses), addresses=addresses)
 #' address_str <- df_to_string(addresses_df)
+#' \donttest{
 #' request_id <- geocodeHERE_batch_upload(address_string = address_str,
 #'                                        email_address = "youremail<at>domain.com")
 #' geocodeHERE_batch_status(request_id)

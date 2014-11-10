@@ -9,11 +9,9 @@
 #' @keywords geocode
 #' @export
 #' @examples
-#' \dontrun{
 #' geocodeHERE_simple("chicago")
 #' geocodeHERE_simple("wrigley field chicago IL")
 #' geocodeHERE_simple("233 S Wacker Dr, Chicago, IL 60606")
-#' }
 geocodeHERE_simple <- function(search, App_id="", App_code=""){
   if(!is.character(search)){stop("'search' must be a character string")}
   if(!is.character(App_id)){stop("'App_id' must be a character string")}
