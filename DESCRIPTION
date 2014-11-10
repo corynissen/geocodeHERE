@@ -7,7 +7,7 @@ Description: Wrapper for Nokia's HERE geocoding API. See http://here.com/ for
     more information on HERE and https://developer.here.com/geocoder for more
     information on the HERE geocoding API.
 Depends:
-    R (>= 3.1.1)
+    R (>= 3.0.0)
 License: MIT + file LICENSE
 LazyData: true
 Imports:
