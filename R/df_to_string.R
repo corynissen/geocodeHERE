@@ -7,12 +7,10 @@
 #' @keywords geocode batch
 #' @export
 #' @examples
-#' \dontrun{
 #' addresses <- chicago_landmarks[,"Address"]
 #' addresses <- paste(addresses, "chicago IL")
 #' addresses_df <- data.frame(id=1:length(addresses), addresses=addresses)
 #' address_str <- df_to_string(addresses_df)
-#' }
 df_to_string <- function(addresses_df){
   if(nrow(addresses_df) > 9999){stop("'addresses_df' must be less than 10,000 rows")}
 
