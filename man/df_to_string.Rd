@@ -15,12 +15,10 @@ a long string consisting of all of the addresses to be geocoded formatted for th
 Format a df of addresses for upload
 }
 \examples{
-\dontrun{
 addresses <- chicago_landmarks[,"Address"]
 addresses <- paste(addresses, "chicago IL")
 addresses_df <- data.frame(id=1:length(addresses), addresses=addresses)
 address_str <- df_to_string(addresses_df)
-}
 }
 \keyword{batch}
 \keyword{geocode}

@@ -19,11 +19,9 @@ A list containing Latitude and Longitude if found, NA otherwise
 Enter a string and if found, the latitude and longitude is returned using the HERE API
 }
 \examples{
-\dontrun{
 geocodeHERE_simple("chicago")
 geocodeHERE_simple("wrigley field chicago IL")
 geocodeHERE_simple("233 S Wacker Dr, Chicago, IL 60606")
-}
 }
 \keyword{geocode}
 
