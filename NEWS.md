@@ -1,4 +1,6 @@
 
+# geocodeHERE 0.1.2
+* Documentation changes only. Change /donttest to /dontrun in some examples
 
 # geocodeHERE 0.1.1
 * Lowered R depends to 3.0.0 (#1 @trestletech)

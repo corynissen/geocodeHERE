@@ -1,4 +1,4 @@
 
-geocodeHERE 0.1.1
-* unzip files in temp directory for better cleanup
-* lower R dependency to 3.0.0 for wider adoption
+geocodeHERE 0.1.2
+* Documentation changes only. Change /donttest to /dontrun in some examples. These are examples where bulk data is uploaded to an external API
+
