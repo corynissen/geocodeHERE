@@ -27,8 +27,8 @@ geocodeHERE_batch_status <- function(request_id="", full_list=FALSE, App_id="", 
   if(!is.logical(full_list)){stop("'full_list' must be a logical value")}
 
   if(App_id=="" & App_code==""){
-    App_id <- "DemoAppId01082013GAL"
-    App_code <- "AJKnXv84fjrb0KIHawS0Tg"
+    App_id <- "inwresuveWra5ebewaSweh"
+    App_code <- "zBWCuMTr-PrXwr6pc5uqLg"    
     base_url <- "http://batch.geocoder.cit.api.here.com/6.2/jobs"
   }else{
     base_url <- "http://batch.geocoder.api.here.com/6.2/jobs"

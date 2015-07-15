@@ -27,8 +27,8 @@ geocodeHERE_batch_get_data <- function(request_id="", App_id="", App_code=""){
     stop("Batch geocoding is not completed yet")}
 
   if(App_id=="" & App_code==""){
-    App_id <- "DemoAppId01082013GAL"
-    App_code <- "AJKnXv84fjrb0KIHawS0Tg"
+    App_id <- "inwresuveWra5ebewaSweh"
+    App_code <- "zBWCuMTr-PrXwr6pc5uqLg"    
     base_url <- "http://batch.geocoder.cit.api.here.com/6.2/jobs"
   }else{
     base_url <- "http://batch.geocoder.api.here.com/6.2/jobs"
@@ -47,8 +47,8 @@ geocodeHERE_batch_get_data <- function(request_id="", App_id="", App_code=""){
     stop(paste("ERROR: ", response$Details))
   }
 
-  con <- unzip(file_path, exdir=paste0(file_path, "tmp"))
-  df <- read.delim(con, stringsAsFactors=F, sep="|")
+  con <- utils::unzip(file_path, exdir=paste0(file_path, "tmp"))
+  df <- utils::read.delim(con, stringsAsFactors=F, sep="|")
   unlink(file_path)
 
   return(df)

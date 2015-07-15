@@ -17,9 +17,9 @@ geocodeHERE_simple <- function(search, App_id="", App_code=""){
   if(!is.character(App_id)){stop("'App_id' must be a character string")}
   if(!is.character(App_code)){stop("'App_code' must be a character string")}
 
-  if(App_id=="" & App_code==""){
-    App_id <- "DemoAppId01082013GAL"
-    App_code <- "AJKnXv84fjrb0KIHawS0Tg"
+  if(App_id=="" & App_code==""){    
+    App_id <- "inwresuveWra5ebewaSweh"
+    App_code <- "zBWCuMTr-PrXwr6pc5uqLg"
     base_url <- "http://geocoder.cit.api.here.com/6.2/geocode.json"
   }else{
     base_url <- "http://geocoder.api.here.com/6.2/geocode.json"

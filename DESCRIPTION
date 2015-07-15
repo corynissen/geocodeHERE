@@ -1,6 +1,6 @@
 Package: geocodeHERE
 Title: Wrapper for Nokia's HERE Geocoding API
-Version: 0.1.2
+Version: 0.1.3
 Author: Cory Nissen <corynissen@gmail.com> [aut, cre]
 Maintainer: Cory Nissen <corynissen@gmail.com>
 Description: Wrapper for Nokia's HERE geocoding API. See http://here.com/ for
@@ -11,5 +11,6 @@ Depends:
 License: MIT + file LICENSE
 LazyData: true
 Imports:
-    httr
+    httr,
+    utils
 URL: https://github.com/corynissen/geocodeHERE

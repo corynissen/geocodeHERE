@@ -30,8 +30,8 @@ geocodeHERE_batch_upload <- function(address_string, email_address, App_id="",
   if(!is.character(App_code)){stop("'App_code' must be a character string")}
 
   if(App_id=="" & App_code==""){
-    App_id <- "DemoAppId01082013GAL"
-    App_code <- "AJKnXv84fjrb0KIHawS0Tg"
+    App_id <- "inwresuveWra5ebewaSweh"
+    App_code <- "zBWCuMTr-PrXwr6pc5uqLg"    
     base_url <- "http://batch.geocoder.cit.api.here.com/6.2/jobs"
   }else{
     base_url <- "http://batch.geocoder.api.here.com/6.2/jobs"
